@@ -1,5 +1,2 @@
 # Flaskproj
-Flask Tutorial implemented from the official docs. Web app and SQLite database
-
-
-Implementing the flask offical doc project 
+Blog Web app impelemnted using the official flask doc and SQLite. It features user log in, create account, create, edit and delete blog posts, view post by other users and log out.  
