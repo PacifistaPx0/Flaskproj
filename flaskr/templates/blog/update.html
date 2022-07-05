@@ -5,16 +5,23 @@
 {% endblock %}
 
 {% block content %}
-  <form method="post">
-    <label for="title">Title</label>
-    <input name="title" id="title"
-      value="{{ request.form['title'] or post['title'] }}" required>
-    <label for="body">Body</label>
-    <textarea name="body" id="body">{{ request.form['body'] or post['body'] }}</textarea>
-    <input type="submit" value="Save">
-  </form>
-  <hr>
-  <form action="{{ url_for('blog.delete', id=post['id']) }}" method="post">
-    <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
-  </form>
+<div class="col-md-6">
+    <form method="post">
+        <label for="title">Title</label>
+        <input autofocus class="form-control" 
+            name="title" id="title"
+            value="{{ request.form['title'] or post['title'] }}" required>
+        <label for="body">Body</label>
+        <textarea class="form-control" rows="10"
+            name="body" 
+            id="body">{{ request.form['body'] or post['body'] }}</textarea>
+        <button class="btn btn-primary" type="submit">Save</button>
+      </form>
+      <hr>
+      <form action="{{ url_for('blog.delete', id=post['id']) }}" method="post">
+        <button class="btn btn-danger" type="submit" onclick="return confirm('Are you sure?');">Delete</button>
+      </form>
+</div>
+  
+
 {% endblock %}

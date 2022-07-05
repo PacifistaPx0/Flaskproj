@@ -5,11 +5,18 @@
 {% endblock %}
 
 {% block content %}
-  <form method="post">
-    <label for="title">Title</label>
-    <input name="title" id="title" value="{{ request.form['title'] }}" required>
-    <label for="body">Body</label>
-    <textarea name="body" id="body">{{ request.form['body'] }}</textarea>
-    <input type="submit" value="Save">
-  </form>
+<div class="col-md-6">
+    <form method="post">
+        <label for="title">Title</label>
+        <input autocomplete="off" autofocus class ="form-control"
+            name="title" 
+            id="title" 
+            value="{{ request.form['title'] }}" required>
+        <label for="body">Body</label>
+        <textarea class="form-control" rows="10"
+            name="body" 
+            id="body">{{ request.form['body'] }}</textarea>
+        <button class="btn btn-primary" type="submit">Save</button>
+    </form>
+</div>
 {% endblock %}
