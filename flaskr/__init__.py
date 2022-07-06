@@ -22,6 +22,9 @@ def create_app(test_config=None):
     except OSError:
         pass
 
+    @app.route('/hello')
+    def hello():
+        return 'Hello, world!'
 
 
     from . import db
