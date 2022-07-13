@@ -1,12 +1,15 @@
 import os
 
+from dotenv import load_dotenv
+load_dotenv() #take environment variables from .env
+
 from flask import Flask, render_template, url_for
 
 def create_app(test_config=None):
     #create and config the app
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
-        SECRET_KEY='dev',
+        SECRET_KEY=os.getenv("SECRET_KEY"),
         DATABASE = os.path.join(app.instance_path, 'flask.sqlite'),
     )
     if test_config is None:
