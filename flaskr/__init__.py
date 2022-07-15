@@ -10,7 +10,8 @@ def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY=os.getenv("SECRET_KEY"),
-        DATABASE = os.path.join(app.instance_path, 'flask.sqlite'),
+        #DATABASE = os.path.join(app.instance_path, 'flask.sqlite')
+        DATABASE = 'postgres://kkvzpfulpiexaz:ae934bb5565d4c8953199de10153385b1a63fb2a6ce66b7b25c9928cea3fec31@ec2-54-152-28-9.compute-1.amazonaws.com:5432/d8qk2788k8333i',
     )
     if test_config is None:
         #load the instance config, if it exists, when not testing
